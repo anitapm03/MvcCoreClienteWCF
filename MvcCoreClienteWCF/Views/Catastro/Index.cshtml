@@ -1,0 +1,16 @@
+﻿@model List<Provincia>
+
+<h1>Service Catastro</h1>
+
+<ul class="list-group">
+    @foreach (Provincia p in Model)
+    {
+        <li class="list-group-item">
+            @p.Nombre
+            <a asp-controller="Catastro"
+            asp-action="Municipios"
+            asp-route-provincia="@p.Nombre"
+            class="btn btn-success">Municipios</a>
+        </li>
+    }
+</ul>
